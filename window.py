@@ -24,6 +24,7 @@ background = canvas.create_image(
     364.5, 232.0,
     image=background_img)
 
+# Select button
 img0 = PhotoImage(file = f"img0.png")
 b0 = Button(
     image = img0,
@@ -37,6 +38,7 @@ b0.place(
     width = 106,
     height = 41)
 
+# Upload button
 img1 = PhotoImage(file = f"img1.png")
 b1 = Button(
     image = img1,
@@ -50,6 +52,7 @@ b1.place(
     width = 106,
     height = 41)
 
+# Convert button
 img2 = PhotoImage(file = f"img2.png")
 b2 = Button(
     image = img2,
@@ -62,13 +65,18 @@ b2.place(
     x = 580, y = 232,
     width = 106,
     height = 41)
+    
+# Exit duction
+def exit():
 
+    window.destroy()
+# Exit button
 img3 = PhotoImage(file = f"img3.png")
 b3 = Button(
     image = img3,
     borderwidth = 0,
     highlightthickness = 0,
-    command = btn_clicked,
+    command = exit,
     relief = "flat")
 
 b3.place(
