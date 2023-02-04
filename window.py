@@ -1,4 +1,5 @@
 from tkinter import *
+from pygame import mixer
 
 
 def btn_clicked():
@@ -9,6 +10,7 @@ window = Tk()
 
 window.geometry("753x464")
 window.configure(bg = "#ffffff")
+window.title("Audio Resulotion")
 canvas = Canvas(
     window,
     bg = "#ffffff",
@@ -38,19 +40,24 @@ b0.place(
     width = 106,
     height = 41)
 
-# Upload button
+# Play function 
+mixer.init()
+sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
+
+# Play button
 img1 = PhotoImage(file = f"img1.png")
 b1 = Button(
     image = img1,
     borderwidth = 0,
     highlightthickness = 0,
-    command = btn_clicked,
+    command = sound.play,
     relief = "flat")
 
 b1.place(
     x = 442, y = 314,
     width = 106,
     height = 41)
+
 
 # Convert button
 img2 = PhotoImage(file = f"img2.png")
@@ -65,11 +72,12 @@ b2.place(
     x = 580, y = 232,
     width = 106,
     height = 41)
-    
-# Exit duction
+
+# Exit function
 def exit():
 
     window.destroy()
+
 # Exit button
 img3 = PhotoImage(file = f"img3.png")
 b3 = Button(
