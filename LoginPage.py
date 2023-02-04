@@ -1,4 +1,6 @@
 from tkinter import *
+import pyrelog as pl
+from tkinter.messagebox import showinfo, showwarning
 
 
 def btn_clicked():
@@ -27,8 +29,18 @@ background = canvas.create_image(
 
 # Login function
 def login():
-    window.destroy()
-    import MainPage
+    user = entry0.get()
+    password = entry1.get()
+    try:
+        pl.login(user, password)
+        window.destroy()
+        import MainPage
+    except:
+        
+        showwarning(
+            title='Warning',
+            message="Incorrect username or password! Please try again"
+        )
 
 # Login button
 img0 = PhotoImage(file = f"LoginPageImages/img0.png")
