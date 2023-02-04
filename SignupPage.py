@@ -1,4 +1,5 @@
 from tkinter import *
+import pyrelog as pl
 
 
 def btn_clicked():
@@ -24,10 +25,18 @@ background_img = PhotoImage(file = f"SignupPageImages/background.png")
 background = canvas.create_image(
     349.0, 232.0,
     image=background_img)
+
 # Get started function
-def get_started():
-    window.destroy()
-    import MainPage
+def signup():
+    user = entry0.get()
+    password = entry1.get()
+    try:
+        pl.signup(user, password)
+        window.destroy()
+        import LoginPage
+    except:
+        # switch with tkinter display of failed login (password under 6 character, existing email)
+        print("invalid login information")
 
 # Get started button
 img0 = PhotoImage(file = f"SignupPageImages/img0.png")
@@ -35,7 +44,7 @@ b0 = Button(
     image = img0,
     borderwidth = 0,
     highlightthickness = 0,
-    command = get_started,
+    command = signup,
     relief = "flat")
 
 b0.place(
