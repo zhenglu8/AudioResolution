@@ -3,6 +3,7 @@ import pyrebase
 firebaseConfig = {
     'apiKey': "AIzaSyBx097kuW0poFUqlrunNR73z34n3bRQMt0",
     'authDomain': "audioresolution-3f39a.firebaseapp.com",
+    'databaseURL':"https://audioresolution-3f39a-default-rtdb.firebaseio.com",
     'projectId': "audioresolution-3f39a",
     'storageBucket': "audioresolution-3f39a.appspot.com",
     'messagingSenderId': "371585477300",
