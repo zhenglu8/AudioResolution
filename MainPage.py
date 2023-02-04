@@ -21,13 +21,13 @@ canvas = Canvas(
     relief = "ridge")
 canvas.place(x = 0, y = 0)
 
-background_img = PhotoImage(file = f"background.png")
+background_img = PhotoImage(file = f"MainPageImages/background.png")
 background = canvas.create_image(
     364.5, 232.0,
     image=background_img)
 
 # Select button
-img0 = PhotoImage(file = f"img0.png")
+img0 = PhotoImage(file = f"MainPageImages/img0.png")
 b0 = Button(
     image = img0,
     borderwidth = 0,
@@ -45,7 +45,7 @@ mixer.init()
 sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
 
 # Play button
-img1 = PhotoImage(file = f"img1.png")
+img1 = PhotoImage(file = f"MainPageImages/img1.png")
 b1 = Button(
     image = img1,
     borderwidth = 0,
@@ -60,7 +60,7 @@ b1.place(
 
 
 # Convert button
-img2 = PhotoImage(file = f"img2.png")
+img2 = PhotoImage(file = f"MainPageImages/img2.png")
 b2 = Button(
     image = img2,
     borderwidth = 0,
@@ -79,7 +79,7 @@ def exit():
     window.destroy()
 
 # Exit button
-img3 = PhotoImage(file = f"img3.png")
+img3 = PhotoImage(file = f"MainPageImages/img3.png")
 b3 = Button(
     image = img3,
     borderwidth = 0,
