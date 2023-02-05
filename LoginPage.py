@@ -127,6 +127,7 @@ entry0.place(
     width = 188.0,
     height = 27)
 
+# Password entry
 entry1_img = PhotoImage(file = f"LoginPageImages/img_textBox1.png")
 entry1_bg = canvas.create_image(
     556.5, 285.5,
@@ -135,6 +136,7 @@ entry1_bg = canvas.create_image(
 entry1 = Entry(
     bd = 0,
     bg = "#f0f0f0",
+    show = '*',
     highlightthickness = 0)
 
 entry1.place(
