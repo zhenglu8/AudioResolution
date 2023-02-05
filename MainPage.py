@@ -31,11 +31,13 @@ def select():
     file = askopenfilename(filetypes=[
         ('Audio files', '*.wav'), ('all files', '*.*')])
     
+
     shutil.copyfile(file,'./files/selected_audio.wav')
         
+    
     showinfo(
         title='Selected Audio',
-        #message= file.name + " is selected"
+        message= file + " is selected"
     )
     file.close()
 
@@ -54,11 +56,10 @@ b0.place(
     height = 41)
 
 # Play function 
-def play():
-    #mixer.init()
-    #sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
-    # sound.play
-    pass
+
+mixer.init()
+sound = mixer.Sound("output_files/selected_audio_pr.wav")
+    
 # Play button
 img1 = PhotoImage(file = f"MainPageImages/music-player-icon.png")
 img1 = img1.subsample(3)
@@ -66,7 +67,7 @@ b1 = Button(
     image = img1,
     borderwidth = 0,
     highlightthickness = 0,
-    command = play,
+    command = sound.play,
     relief = "flat")
 
 b1.place(
@@ -75,6 +76,7 @@ b1.place(
     height = 110)
 
 # Convert function
+
 def convert():
     s = ["eval","--logname", "./models/singlespeaker.lr0.000300.1.g4.b16/model.ckpt-10401", "--wav-file", "selected_audio.wav", "--r", "4", "--sr", "16000"]
     parser = algro.make_parser()
