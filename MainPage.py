@@ -1,10 +1,8 @@
 from tkinter import *
 from pygame import mixer
-
-
-def btn_clicked():
-    print("Button Clicked")
-
+from tkinter.filedialog import askopenfile
+from tkinter.messagebox import showinfo, showwarning
+import os
 
 window = Tk()
 
@@ -26,13 +24,26 @@ background = canvas.create_image(
     364.5, 232.0,
     image=background_img)
 
+# Select function
+def select():
+    file = askopenfile(mode='r', filetypes=[
+        ('Audio files', '*.wav'), ('all files', '*.*')])
+    
+    if file is not None:
+        open('SelectedAudio/selected_audio.wav', 'w')
+    
+    showinfo(
+        title='Selected Audio',
+        message="The " + file.name + " is successfully selected"
+    )
+
 # Select button
 img0 = PhotoImage(file = f"MainPageImages/img0.png")
 b0 = Button(
     image = img0,
     borderwidth = 0,
     highlightthickness = 0,
-    command = btn_clicked,
+    command = select,
     relief = "flat")
 
 b0.place(
@@ -59,14 +70,16 @@ b1.place(
     width = 110,
     height = 110)
 
-
+# Convert function
+def convert():
+    pass
 # Convert button
 img2 = PhotoImage(file = f"MainPageImages/img2.png")
 b2 = Button(
     image = img2,
     borderwidth = 0,
     highlightthickness = 0,
-    command = btn_clicked,
+    command = convert,
     relief = "flat")
 
 b2.place(
@@ -76,7 +89,7 @@ b2.place(
 
 # Exit function
 def exit():
-
+    os.remove("SelectedAudio/selected_audio.wav")
     window.destroy()
 
 # Exit button
