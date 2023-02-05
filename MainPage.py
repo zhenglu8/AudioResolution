@@ -30,7 +30,7 @@ def select():
         ('Audio files', '*.wav'), ('all files', '*.*')])
     
     if file is not None:
-        open('SelectedAudio/selected_audio.wav', 'w')
+        open('Algorithm/src/files/selected_audio.wav', 'w')
     
     showinfo(
         title='Selected Audio',
@@ -52,9 +52,11 @@ b0.place(
     height = 41)
 
 # Play function 
-mixer.init()
-sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
-
+def play():
+    #mixer.init()
+    #sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
+    # sound.play
+    pass
 # Play button
 img1 = PhotoImage(file = f"MainPageImages/music-player-icon.png")
 img1 = img1.subsample(3)
@@ -62,7 +64,7 @@ b1 = Button(
     image = img1,
     borderwidth = 0,
     highlightthickness = 0,
-    command = sound.play,
+    command = play,
     relief = "flat")
 
 b1.place(
@@ -89,12 +91,12 @@ b2.place(
 
 # Exit function
 def exit():
-    dir = os.listdir("SelectedAudio")
+    dir = os.listdir("Algorithm/src/files")
     
     if(len(dir) == 0):
         window.destroy()
     else:
-        os.remove("SelectedAudio/selected_audio.wav")
+        os.remove("Algorithm/src/output_files/selected_audio.wav")
         window.destroy()
 
 # Exit button
