@@ -34,7 +34,7 @@ def select():
     
     showinfo(
         title='Selected Audio',
-        message="The " + file.name + " is successfully selected"
+        message= file.name + " is selected"
     )
 
 # Select button
@@ -89,8 +89,13 @@ b2.place(
 
 # Exit function
 def exit():
-    os.remove("SelectedAudio/selected_audio.wav")
-    window.destroy()
+    dir = os.listdir("SelectedAudio")
+    
+    if(len(dir) == 0):
+        window.destroy()
+    else:
+        os.remove("SelectedAudio/selected_audio.wav")
+        window.destroy()
 
 # Exit button
 img3 = PhotoImage(file = f"MainPageImages/img3.png")
