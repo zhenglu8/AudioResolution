@@ -135,8 +135,8 @@ def eval(args):
     try:
         print(args.wav_file)
         upsample_wav('./files/' + args.wav_file, args, model)
-    except EOFError:
-        print('WARNING: Error reading file:', line.strip())
+    except Exception as e: 
+        print (str(e))
 
 
 def get_model(args, n_dim, r, from_ckpt=False, train=True, grocery='false'):
