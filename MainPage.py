@@ -45,7 +45,8 @@ mixer.init()
 sound = mixer.Sound("ConvertedAudio/samples_msp_4_msp.2.4.pr.wav")
 
 # Play button
-img1 = PhotoImage(file = f"MainPageImages/img1.png")
+img1 = PhotoImage(file = f"MainPageImages/music-player-icon.png")
+img1 = img1.subsample(3)
 b1 = Button(
     image = img1,
     borderwidth = 0,
@@ -54,9 +55,9 @@ b1 = Button(
     relief = "flat")
 
 b1.place(
-    x = 442, y = 314,
-    width = 106,
-    height = 41)
+    x = 515, y = 290,
+    width = 110,
+    height = 110)
 
 
 # Convert button
@@ -88,7 +89,7 @@ b3 = Button(
     relief = "flat")
 
 b3.place(
-    x = 580, y = 314,
+    x = 515, y = 425,
     width = 106,
     height = 41)
 
