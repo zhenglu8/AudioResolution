@@ -74,7 +74,7 @@ b1.place(
 
 # Convert function
 def convert():
-    pass
+    os.popen("sh start.sh")
 # Convert button
 img2 = PhotoImage(file = f"MainPageImages/img2.png")
 b2 = Button(
@@ -96,7 +96,7 @@ def exit():
     if(len(dir) == 0):
         window.destroy()
     else:
-        os.remove("Algorithm/src/output_files/selected_audio.wav")
+        os.remove("Algorithm/src/files/selected_audio.wav")
         window.destroy()
 
 # Exit button
